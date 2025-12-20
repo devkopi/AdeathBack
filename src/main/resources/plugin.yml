@@ -1,0 +1,14 @@
+name: AdeathBack
+version: '1.0'
+main: org.ccoding.adeathback.Adeathback
+api-version: '1.21'
+commands:
+  aback:
+    description: Regresa a tu lugar de muerte
+    usage: /aback
+  adeath:
+    description: Comando administrativo del plugin
+
+permissions:
+  adeathback.admin:
+    default: op

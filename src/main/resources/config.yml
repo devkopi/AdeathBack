@@ -1,0 +1,7 @@
+messages:
+  death: "&c¡Moriste! &7Usa &e/aback &7para regresar a tu lugar de muerte."
+  back-success: "&aHas regresado a tu lugar de muerte."
+  back-no-location: "&cNo tienes una ubicación de muerte guardada."
+  only-player: "&cEste comando solo puede ser usado por jugadores."
+  reload-success: "&aConfiguración recargada correctamente."
+  no-permission: "&cNo tienes permiso para ejecutar este comando."
