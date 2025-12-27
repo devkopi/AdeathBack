@@ -3,13 +3,12 @@ package org.ccoding.adeathback.utils;
 import org.bukkit.command.CommandSender;
 import org.ccoding.adeathback.Adeathback;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class MessageUtils {
 
     private final Adeathback plugin;
-    private final Map<String, String> messages = new HashMap<>();
+    private final Map<String, List<String>> messages = new HashMap<>();
 
     public MessageUtils(Adeathback plugin) {
         this.plugin = plugin;
@@ -27,21 +26,43 @@ public class MessageUtils {
                 .getConfigurationSection("messages")
                 .getKeys(false)) {
 
-            messages.put(
-                    key,
-                    ColorUtils.colorize(
-                            plugin.getConfig().getString("messages." + key)
-                    )
-            );
+            String path = "messages." + key;
+
+            // Si es una lista
+            if (plugin.getConfig().isList(path)) {
+                List<String> lines = plugin.getConfig().getStringList(path);
+                List<String> colored = new ArrayList<>();
+
+                for (String line : lines) {
+                    colored.add(ColorUtils.colorize(line));
+                }
+
+                messages.put(key, colored);
+
+                // Si es un solo String
+            } else {
+                messages.put(
+                        key,
+                        Collections.singletonList(
+                                ColorUtils.colorize(
+                                        plugin.getConfig().getString(path)
+                                )
+                        )
+                );
+            }
         }
     }
 
     public void send(CommandSender sender, String key) {
-        sender.sendMessage(
-                messages.getOrDefault(
-                        key,
-                        "§cMensaje no encontrado: messages." + key
-                )
-        );
+        List<String> message = messages.get(key);
+
+        if (message == null) {
+            sender.sendMessage("§cMensaje no encontrado: messages." + key);
+            return;
+        }
+
+        for (String line : message) {
+            sender.sendMessage(line);
+        }
     }
 }

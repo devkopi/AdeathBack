@@ -36,7 +36,7 @@ public class AdeathCommand implements CommandExecutor {
             return true;
         }
 
-        sender.sendMessage("§e/adeath reload");
+        plugin.getMessageUtils().send(sender, "unknown-command");
         return true;
     }
 }
