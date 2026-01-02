@@ -1,11 +1,11 @@
 messages:
   death:
-    - "&8&m----------- &c&lMUERTE&8&m -----------"
+    - "&8&m----------- &c&lHAZ MUERTO MUERTO&8&m -----------"
     - "&r"
     - "&fPuedes usar &e/ultimamuerte &fo &e/muerte"
     - "&fpara regresar al lugar de tu muerte."
     -  "&r"
-    - "&8&m----------- &c&lMUERTE&8&m -----------"
+    - "&8&m----------- &c&lHAZ MUERTO&8&m -----------"
   back-success: "&aHas regresado a tu lugar de muerte."
   back-no-location: "&cNo tienes una ubicación de muerte guardada."
   only-player: "&cEste comando solo puede ser usado por jugadores."
