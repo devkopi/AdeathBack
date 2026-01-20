@@ -7,10 +7,9 @@ commands:
     description: Regresa a tu lugar de muerte
     usage: /aback
     aliases:
-      - regresarmuerte
-      - ultimamuerte
-      - muerte
-      - regresarm
+      - lastdeath
+      - death
+      - back
   adeath:
     description: Comando administrativo del plugin
 
