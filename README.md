@@ -36,3 +36,8 @@ A lightweight **Minecraft Bukkit/Spigot** plugin that allows players to return t
     - "&8&m----------- &c&lYOU HAVE DIED&8&m -----------"
 ```
 > Fully configurable messages.
+
+# Installation
+1. Download the plugin from [Spigot](https://www.spigotmc.org/resources/adeathback.131953/) | [Modrinth]()
+2. Place the plugin in the `plugins` folder of your Spigot server
+3. Restart/Start your server
